@@ -31,29 +31,61 @@ def loopGreetings(): #Şimdilik bu fonksiyonu devre dışı bırakıyorum, ilerl
             else:
                 readyForTalk = True
 
-def trueHoroscopes(choosen):
-    if choosen == "boğa":
-        choosen1 = questions_sample.taurus()
-        loopHoroscope(choosen1)
+def trueHoroscopes(userInput):
+    """Bu fonksiyon kullanının girdisini kontrol ederek gerekli fonskiyona yönlendirmekte"""
+    if userInput == "boğa":
+        smp = "taurus"
+        loopHoroscope(smp)
+    elif userInput == "aslan":
+        smp = "leo"
+        loopHoroscope(smp)
 
-def loopHoroscope(hgeneral):
+def loopHoroscope(smp):
     print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
     "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
     "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
     "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
     "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prj_name))
+    print(smp)
     userInput = input("User: ")
-    if userInput == "1":
-        print(hgeneral)
-        time.sleep(1.5)
-        return trueHoroscopes(userInput.lower())
-    elif userInput == "2":
-        print("2")
-    elif userInput == "3":
-        print("3")
-    elif userInput in hello_there_inputs:
-        print("Bu kadar merhaba yeter")
-        return loopHoroscope(hgeneral)
+    if smp == "taurus":
+        if userInput == "1":
+            questions_sample.taurus()
+            time.sleep(1.5)
+            return loopHoroscope("taurus")
+        elif userInput == "2":
+            print("2")
+        elif userInput == "3":
+            print("3")
+        elif userInput in hello_there_inputs:
+            print("Bu kadar merhaba yeter")
+            return loopHoroscope("taurus")
+    elif smp == "leo":
+        if userInput == "1":
+            questions_sample.leo()
+            time.sleep(1.5)
+            return loopHoroscope("leo")
+        elif userInput == "2":
+            print("2")
+        elif userInput == "3":
+            print("3")
+        elif userInput in hello_there_inputs:
+            print("Bu kadar merhaba yeter")
+            return loopHoroscope("leo")
+
+
+
+    # if userInput == "1":
+    #     questions_sample.smp()
+    #     time.sleep(1.5)
+    #     return loopHoroscope(userInput.lower())
+    # elif userInput == "2":
+    #     print("2")
+    # elif userInput == "3":
+    #     print("3")
+    # elif userInput in hello_there_inputs:
+    #     print("Bu kadar merhaba yeter")
+    #     return loopHoroscope(smp)
 
 greetings(hello_there_inputs, hello_there_responses)
 print("{} Burcun nedir? ".format(prj_name))
