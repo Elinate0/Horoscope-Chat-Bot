@@ -43,3 +43,4 @@ if user_input in hello_there_inputs:
             continue
 else:
     pass
+print("test")
