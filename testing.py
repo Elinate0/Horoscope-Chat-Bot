@@ -1,56 +1,55 @@
 import random
 import time
-
 import questions_sample
 
-prj_name = 'Project X:'
-
-hello_there_inputs = ("hello", "hi", "greetings", "hey" , "hola", "merhaba", "bonjour", "sua s’dei", "hallo", "ciao")
-hello_there_responses = ["hi", "hey", "nods", "hi there", "hello", "I am glad! You are talking to me"]
+prjName = 'Project X:'
+helloThereInputs = ("hello", "hi", "greetings", "hey", "hola", "merhaba", "bonjour", "sua s’dei", "hallo", "ciao")
+helloThereResponses = ["hi", "hey", "nods", "hi there", "hello", "I am glad! You are talking to me"]
 horoscopes = ["boğa", "ikizler", "yengeç", "aslan"]
 
 def greetings(hti, htr):
+    """Bu fonksiyon kullanıcının girdisini hti içerisinde aratıp, htr içerisinden rastgele değer seçerek karşılık vermekte"""
     userInput = input('Greetings: ')
     for word in userInput.split():
         if word.lower() in hti:
-            print("{}".format(prj_name) + random.choice(htr))
-            continue
+            print("{}".format(prjName) + random.choice(htr))
         else:
-            print("{} Neyden bahsediyorsun, görgü kurallarına geri dönmem gerekirse önce selam söyle!".format(prj_name))
+            print("{} Neyden bahsediyorsun, görgü kurallarına geri dönmem gerekirse önce selam söyle!".format(prjName))
             return greetings(hti, htr)
-    print("{}Let's talk about horoscopes :)\n{}Do you have any questions you want to ask?".format(prj_name, prj_name))
+    print("{0}Let's talk about horoscopes :)\n{0}Do you have any questions you want to ask?".format(prjName))
     loopGreetings()
 
-def loopGreetings(): #Şimdilik bu fonksiyonu devre dışı bırakıyorum, ilerleyen zamanlarda geri döneceğim. Şimdilik readyForTalk yeterli olacaktır.
+def loopGreetings():
+    """Bu fonksiyon kullanıcının girdisini sürekli hti içerisinden kontrol etmekte"""
     readyForTalk = False
     while readyForTalk == False:
         userInput = input("User: ")
         for word in userInput.split():
-            if word in hello_there_inputs:
-                print("{0}{1} again".format(prj_name,random.choice(hello_there_responses)))
-                print("{}Ready for talk?".format(prj_name, prj_name))
+            if word in helloThereInputs:
+                print("{0}{1} again".format(prjName,random.choice(helloThereResponses)))
+                print("{}Ready for talk?".format(prjName, prjName))
             else:
                 readyForTalk = True
 
 def trueHoroscopes(userInput):
+    """Bu fonksiyon kullanının girdisini kontrol ederek gerekli fonskiyona yönlendirmekte"""
     if userInput == "boğa":
         horoscopeBull()
     elif userInput == "aslan":
         horoscopeLion()
 
 def navigating():
-    print("{} Hangi Burcu Seçmek İstersin?:".format(prj_name))
+    """Bu fonksiyon kullanıcı fonksiyon içerisinde "4"ü seçtiğinde tekrar burç seçimine yönlendirmekte"""
+    print("{} Hangi Burcu Seçmek İstersin?:".format(prjName))
     userInput = input("User: ")
     trueHoroscopes(userInput)
 
-
-
 def horoscopeBull():
     print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
-    "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
-    "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
-    "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
-    "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prj_name))
+          "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
+          "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
+          "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
+          "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prjName))
     userInput = input("User: ")
     if userInput == "1":
         questions_sample.taurus()
@@ -62,16 +61,16 @@ def horoscopeBull():
         print("3")
     elif userInput == "4":
         navigating()
-    elif userInput in hello_there_inputs:
+    elif userInput in helloThereInputs:
         print("Bu kadar merhaba yeter")
         return horoscopeBull()
 
 def horoscopeLion():
     print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
-    "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
-    "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
-    "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
-    "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prj_name))
+          "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
+          "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
+          "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
+          "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prjName))
     userInput = input("User: ")
     if userInput == "1":
         questions_sample.leo()
@@ -81,17 +80,14 @@ def horoscopeLion():
         print("2")
     elif userInput == "3":
         print("3")
-    elif userInput in hello_there_inputs:
+    elif userInput in helloThereInputs:
         print("Bu kadar merhaba yeter")
         return horoscopeLion()
-    elif userInput== "4":
+    elif userInput == "4":
         navigating()
 
-
-
-
-greetings(hello_there_inputs, hello_there_responses)#Program Burda Başlıyor
-print("{} Burcun nedir? ".format(prj_name))
+greetings(helloThereInputs, helloThereResponses)  # Program Burda Başlıyor
+print("{} Burcun nedir? ".format(prjName))
 userInput = input("User: ")
 if userInput.lower() in horoscopes:
     trueHoroscopes(userInput.lower())
