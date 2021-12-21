@@ -1,5 +1,6 @@
 import random
 import time
+
 import questions_sample
 
 prj_name = 'Project X:'
@@ -31,9 +32,18 @@ def loopGreetings(): #Şimdilik bu fonksiyonu devre dışı bırakıyorum, ilerl
             else:
                 readyForTalk = True
 
-def trueHoroscopes():
+def trueHoroscopes(userInput):
     if userInput == "boğa":
         horoscopeBull()
+    elif userInput == "aslan":
+        horoscopeLion()
+
+def navigating():
+    print("{} Hangi Burcu Seçmek İstersin?:".format(prj_name))
+    userInput = input("User: ")
+    trueHoroscopes(userInput)
+
+
 
 def horoscopeBull():
     print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
@@ -50,12 +60,38 @@ def horoscopeBull():
         print("2")
     elif userInput == "3":
         print("3")
+    elif userInput == "4":
+        navigating()
     elif userInput in hello_there_inputs:
         print("Bu kadar merhaba yeter")
         return horoscopeBull()
 
-greetings(hello_there_inputs, hello_there_responses)
+def horoscopeLion():
+    print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
+    "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
+    "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
+    "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
+    "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prj_name))
+    userInput = input("User: ")
+    if userInput == "1":
+        questions_sample.leo()
+        time.sleep(1.5)
+        return horoscopeLion()
+    elif userInput == "2":
+        print("2")
+    elif userInput == "3":
+        print("3")
+    elif userInput in hello_there_inputs:
+        print("Bu kadar merhaba yeter")
+        return horoscopeLion()
+    elif userInput== "4":
+        navigating()
+
+
+
+
+greetings(hello_there_inputs, hello_there_responses)#Program Burda Başlıyor
 print("{} Burcun nedir? ".format(prj_name))
 userInput = input("User: ")
 if userInput.lower() in horoscopes:
-    trueHoroscopes()
+    trueHoroscopes(userInput.lower())
