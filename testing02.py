@@ -31,14 +31,20 @@ def loopGreetings(): #Şimdilik bu fonksiyonu devre dışı bırakıyorum, ilerl
             else:
                 readyForTalk = True
 
-def trueHoroscopes(userInput):
+def trueHoroscopes(choosen):
     """Bu fonksiyon kullanının girdisini kontrol ederek gerekli fonskiyona yönlendirmekte"""
-    if userInput == "boğa":
+    if choosen == "boğa":
         smp = "taurus"
         loopHoroscope(smp)
-    elif userInput == "aslan":
+    elif choosen == "aslan":
         smp = "leo"
         loopHoroscope(smp)
+
+def navigating():
+    """Bu fonksiyon kullanıcı fonksiyon içerisinde "4"ü seçtiğinde tekrar burç seçimine yönlendirmekte"""
+    print("{} Hangi Burcu Seçmek İstersin?:".format(prj_name))
+    userInput = input("User: ")
+    trueHoroscopes(userInput)
 
 def loopHoroscope(smp):
     print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
@@ -46,7 +52,6 @@ def loopHoroscope(smp):
     "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
     "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
     "\n Ekrana -- 4 -- yazarak farklı bir burç girebilirsin. ".format(prj_name))
-    print(smp)
     userInput = input("User: ")
     if smp == "taurus":
         if userInput == "1":
@@ -57,6 +62,8 @@ def loopHoroscope(smp):
             print("2")
         elif userInput == "3":
             print("3")
+        elif userInput == "4":
+            navigating()
         elif userInput in hello_there_inputs:
             print("Bu kadar merhaba yeter")
             return loopHoroscope("taurus")
@@ -69,11 +76,11 @@ def loopHoroscope(smp):
             print("2")
         elif userInput == "3":
             print("3")
+        elif userInput =="4":
+            navigating()
         elif userInput in hello_there_inputs:
             print("Bu kadar merhaba yeter")
             return loopHoroscope("leo")
-
-
 
     # if userInput == "1":
     #     questions_sample.smp()
