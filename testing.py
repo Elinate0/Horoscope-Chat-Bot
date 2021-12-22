@@ -7,22 +7,25 @@ prjName = 'Project X:'
 helloThereInputs = ("hello", "hi", "greetings", "hey", "hola", "merhaba", "bonjour", "sua s’dei", "hallo", "ciao", "selam")
 helloThereResponses = ["hi", "hey", "selam", "hi there", "hello", "Mutluyum! Benimle konuşuyorsun"]
 horoscopes = ["boğa", "ikizler", "yengeç", "aslan"]
-
+otherHoroscopes = ("koç","başak","terazi","akrep","yay","oğlak","kova","balık")
 
 def greetings(hti, htr):
+    """Bu fonksiyon giriş ekranını temsil etmekte ve kullanıcının girişini hti içerisinde kontrol edip htr içerisinden rastgele cevap vermekte"""
     userInput = input('Kullanıcı: ')
     for word in userInput.split():
         if word.lower() in hti:
+            time.sleep(2)
             print("{} ".format(prjName) + random.choice(htr))
             continue
         else:
             print("{} Neyden bahsediyorsun, görgü kurallarına geri dönmem gerekirse önce selam söyle!".format(prjName))
             return greetings(hti, htr)
-    print("{0} Hadi artık burçlar hakkında konuşalım :)".format(prjName))
+    print("{0} Umarım kızmazsın fakat şu anda yalnızca boğa, ikizler, yengeç ve aslan burçları hakkında yorum yapabiliyorum.".format(prjName))
 
 
 
 def loopGreetings():
+    """Bu fonksiyon çok güzel duran bir fonksiyon olmasına karşın henüz kullanmıyoruz"""
     readyForTalk = False
     while readyForTalk == False:
         userInput = input("Kullanıcı: ")
@@ -35,14 +38,19 @@ def loopGreetings():
 
 
 def trueHoroscopes(choosen):
-    """Bu fonksiyon kullanının girdisini kontrol ederek gerekli fonskiyona yönlendirmekte"""
+    """Bu fonksiyon kullanıcnın girdisini kontrol ederek gerekli fonskiyona yönlendirmekte"""
     if choosen == "boğa":
         smp = "taurus"
         loopHoroscope(smp)
     elif choosen == "aslan":
         smp = "leo"
         loopHoroscope(smp)
-
+    elif choosen == "yengeç":
+        smp = "cancer"
+        loopHoroscope(smp)
+    elif choosen == "ikizler":
+        smp = "gemini"
+        loopHoroscope(smp)
 
 def navigating():
     """Bu fonksiyon kullanıcı fonksiyon içerisinde "4"ü seçtiğinde tekrar burç seçimine yönlendirmekte"""
@@ -59,7 +67,9 @@ def navigating():
 
 
 def loopHoroscope(smp):
-    print("{} Seçtiğin burcu hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
+    """Bu fonksiyon seçilen burca yönelik opsiyonelleri ve farklı burç girişi için yönlendirmeyi yapmakta"""
+    print("Şu anda {} burcundasın".format(smp))
+    print("{} Seçtiğin burç hakkında sunmak istediğim üç opsiyonel var, bunlar: \n "
           "Ekrana -- 1 -- yazarak burcun hakkında genen bilgileri öğrenebilirsin."
           "\n Ekrana -- 2 -- yazarak burcun hakkında soru seçimi yapabilirsin."
           "\n Ekrana -- 3 -- yazarak burcun hakkında soru girişi yapabilirsin."
@@ -112,5 +122,7 @@ while readyForMove == False:
     elif userInput.lower() == "hayır":
         print("{} Üzücü :'( görüşmek üzere...".format(prjName))
         quit()
+    elif userInput.lower() in otherHoroscopes:
+        print("{} Üzgünüm fakat bu burç hakkında yorum yapamıyorum. Söylemiş olduğum dört burç arasından birisini yazar mısın?".format(prjName))
     else:
         print("{} Lütfen bana burcunu söyler misin?".format(prjName))
