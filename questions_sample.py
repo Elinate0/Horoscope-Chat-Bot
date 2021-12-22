@@ -1,11 +1,10 @@
 import time
-baseQuestionsTaurus = {"1- Boğa burcunun yönetici gezegeni nedir?": "Venüs gezegeni boğa burcunun yönetici gezegenidir.",
-                       "2- Boğa burcunun sevdiği renkler nelerdir?": "Boğa burcunun sevdiği renkler yeşil ve pembedir.",
-                       "3- Boğa burcunun olumlu özellikleri nelerdir?":"Boğa burcu sabırlı, düzenli, yardımcı, romantik, özenli ve adanmıştır.",
-                       "4- Boğa burcunun olumsuz özellikleri nelerdir?": "Boğa burcu fazla hoşgörülü, inatçı, tembel ve fazal ihtiyatlıdır.",
-                       "5- Boğa burcunun sevdiği aktiviteler nelerdir?": "Müzik dinlemek, yemek pişirmek, bahçıvanlık ve spor yapmaktır.",
-                       "6- Boğa burcunun sevmediği durumlar nelerdir?": "Boğa burcu acele ettirilmeyi, paranın israf edilmesini ve ani değişiklikleri sevmemektedir.",}
+prjName = 'Project X:'
+baseQuestionsTaurus = ["1- Boğa burcunun yönetici gezegeni nedir?",
+                       "2- Boğa burcunun sevdiği renkler nelerdir?"]
 
+baseAnswersTaurus = ["Venüs gezegeni boğa burcunun yönetici gezegenidir.",
+                     "Boğa burcunun sevdiği renkler yeşil ve pembedir."]
 def taurus():
     bull_general = "Sembolü: Boğa \n Elementi: Toprak \n Niteliği: Sabit \n Yönetici gezegeni: Venüs (güzelliğin ve aşkın gezegeni) \n Renk: Yeşil ve pembe" \
                "Uğurlu sayılar: 6, 4 \n Uğurlu taşları: Turkuaz taşı, Topaz taşı, Pembe Kuvars, Safir ve Yeşim " \
@@ -13,9 +12,9 @@ def taurus():
                "\n Olumsuz özellikleri: Fazla hoşgörülü, inatçı, tembel, fazla ihtiyatlı" \
                "\n En sevdiği şeyler: Fotoğraf, dağlar, güzel müzik, gurme yemek, yemek pişirmek, bahçecilik, romans ve kaliteli giysiler" \
                "\n Nefret ettiği şeyler: Acele ettirilmek, parayı israf etmek, kirli şeyler, oteller, ani değişiklikler, engeller ve güvensizlik " \
-                "\n Menüye dönülüyor" \
                 "\n"
     print(bull_general)
+    print("{} Menüye dönmek ister misin?".format(prjName))
     forLoop()
 
 def leo():
@@ -47,24 +46,25 @@ def gemini():
     print(gemini_general)
 
 def forLoop():
-    for x in range(1, 4):
+    print("Menüye dönmek için kalan süre")
+    for number in range(3, 0,-1):
         time.sleep(1)
-        print("Menüye dönülüyor: {}\n".format(x))
+        print("{}".format(number))
 
-def baseQuestionsShow(inp,bqt):
-    for word in bqt.keys():
+def baseQuestionsShow(bqt):
+    print("{} Burcun hakkındaki sorular bunlar: ".format(prjName))
+    for word in bqt:
+        time.sleep(0.50)
         print(word)
-    print("Hangi soruyu seçmek istersin? ")
+    time.sleep(0.80)
+    print("{} Hangi soruyu seçmek istersin? ".format(prjName))
     userInput = input("User: ")
-    horoscopeQuestion(,userInput)
+    horoscopeQuestion(baseAnswersTaurus,userInput)
 
 def horoscopeQuestion(bq,inp):
     if inp == "1":
-        print(bq.)
+        print(bq[0])
     elif inp == "2":
-        print(bq.get("2- Boğa burcunun sevdiği renkler nelerdir?"))
-    elif inp == "3":
-        print(bq.get("3- Boğa burcunun olumlu özellikleri nelerdir?"))
-    elif inp == "4":
-        print(bq.get("4- Boğa burcunun olumsuz özellikleri nelerdir?"))
-
+        print(bq[1])
+    time.sleep(3)
+    forLoop()
