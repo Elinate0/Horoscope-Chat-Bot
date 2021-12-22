@@ -6,7 +6,7 @@ baseQuestionsTaurus = ["boğa burcunun yönetici gezegeni nedir?", #0
                        "boğa burcu rengi nedir?", #2
                        "boğa burcunun rengi nelerdir?", #3
                        "boğa burcunun sevdiği renkler nelerdir?", #4
-                       "boğa burcu renkleri nelerdir?", #5
+                       "boğa burcu renkleri nelerdir?", #5 #boğa burcu hangi rengi sever ve hangi renkleri sever
                        "boğa burcunun olumlu özellikleri nelerdir?", #6
                        "boğa burcu olumlu özellikleri nedir?", #7
                        "boğa burcu olumlu özelliği nedir?", #8
