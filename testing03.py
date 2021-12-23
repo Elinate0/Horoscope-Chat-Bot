@@ -19,9 +19,6 @@ baseAnswersTaurus = ["Venüs gezegeni boğa burcunun yönetici gezegenidir.",
                      "Boğa burcu sabırlı, düzenli, yardımcı, romantik, özenli ve adanmıştır.",
                      "Boğa burcu fazla hoşgörülü, inatçı, tembel ve fazal ihtiyatlıdır.",]
 c = input(": ")
-
-
-
 print(fuzz.partial_ratio(baseQuestionsTaurus[2], c))
 print(fuzz.partial_ratio(baseQuestionsTaurus[3], c))
 print(fuzz.partial_ratio(baseQuestionsTaurus[4], c))
