@@ -1,6 +1,6 @@
-from strsimpy.longest_common_subsequence import LongestCommonSubsequence
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
-lcs = LongestCommonSubsequence()
 baseQuestionsTaurus = ["boğa burcunun yönetici gezegeni nedir?", #0
                        "boğa burcu gezegeni nedir?", #1
                        "boğa burcu rengi nedir?", #2
@@ -19,30 +19,34 @@ baseAnswersTaurus = ["Venüs gezegeni boğa burcunun yönetici gezegenidir.",
                      "Boğa burcu sabırlı, düzenli, yardımcı, romantik, özenli ve adanmıştır.",
                      "Boğa burcu fazla hoşgörülü, inatçı, tembel ve fazal ihtiyatlıdır.",]
 c = input(": ")
-print("value")
-print(lcs.distance(baseQuestionsTaurus[0], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[2], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[3], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[4], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[5], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[6], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[7], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[8], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[9], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[10], c.lower()))
-print(lcs.distance(baseQuestionsTaurus[11], c.lower()))
 
 
-if lcs.distance(baseQuestionsTaurus[0], c) <= 9 or lcs.distance(baseQuestionsTaurus[1], c) <= 9:
+
+print(fuzz.partial_ratio(baseQuestionsTaurus[2], c))
+print(fuzz.partial_ratio(baseQuestionsTaurus[3], c))
+print(fuzz.partial_ratio(baseQuestionsTaurus[4], c))
+print(fuzz.partial_ratio(baseQuestionsTaurus[5], c))
+print("\n")
+print(fuzz.partial_ratio(baseQuestionsTaurus[0], c))
+print(fuzz.partial_ratio(baseQuestionsTaurus[1], c))
+print("\n")
+print(fuzz.token_sort_ratio(baseQuestionsTaurus[2], c))
+print(fuzz.token_sort_ratio(baseQuestionsTaurus[3], c))
+print(fuzz.token_sort_ratio(baseQuestionsTaurus[4], c))
+print(fuzz.token_sort_ratio(baseQuestionsTaurus[5], c))
+
+
+if fuzz.partial_ratio(baseQuestionsTaurus[0], c) >= 72 or fuzz.partial_ratio(baseQuestionsTaurus[1], c) >= 72:
     print(baseAnswersTaurus[0])
-elif lcs.distance(baseQuestionsTaurus[2], c) <= 7 or lcs.distance(baseQuestionsTaurus[3], c) <= 7\
-        or lcs.distance(baseQuestionsTaurus[4], c) <= 9 or lcs.distance(baseQuestionsTaurus[5], c) <= 9:
+elif fuzz.partial_ratio(baseQuestionsTaurus[2], c) >= 72 or fuzz.partial_ratio(baseQuestionsTaurus[3], c) >= 72\
+        or fuzz.partial_ratio(baseQuestionsTaurus[4], c) >= 72 or fuzz.partial_ratio(baseQuestionsTaurus[5], c) >= 72:
     print(baseAnswersTaurus[1])
-elif lcs.distance(baseQuestionsTaurus[6], c) <= 7 or lcs.distance(baseQuestionsTaurus[7], c) <= 7\
-        or lcs.distance(baseQuestionsTaurus[8], c) <= 7:
+elif fuzz.partial_ratio(baseQuestionsTaurus[6], c) >= 72 or fuzz.partial_ratio(baseQuestionsTaurus[7], c) >= 72\
+        or fuzz.partial_ratio(baseQuestionsTaurus[8], c) >= 72:
     print(baseAnswersTaurus[2])
-elif lcs.distance(baseQuestionsTaurus[9], c) <= 7 or lcs.distance(baseQuestionsTaurus[10], c) <= 7\
-        or lcs.distance(baseQuestionsTaurus[11], c) <= 7:
+elif fuzz.partial_ratio(baseQuestionsTaurus[9], c) >= 72 or fuzz.partial_ratio(baseQuestionsTaurus[10], c) >= 72\
+        or fuzz.partial_ratio(baseQuestionsTaurus[11], c) >= 72:
     print(baseAnswersTaurus[3])
 else:
     print("Söylediğinizi anlayamıyorum.")
+
