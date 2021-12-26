@@ -15,7 +15,8 @@ baseAnswersTaurus = ["Venüs gezegeni boğa burcunun yönetici gezegenidir.", #0
                      "Boğa burcunun uğurlu sayıları 6 ve 4.",#6
                      "Boğa burcunun uğurlu taşları Turkuaz taşı, Topaz taşı, Pembe Kuvars, Safir ve Yeşimdir.",#7
                      "Boğa burcunun en sevdiği şeyler; Ziynet eşyaları,Moda,Sürprizlerdir",#8
-                     "Boğa burcunun en nefret ettiği şeyler;Değişim,Risk almak,Acele Ettirilmek,Güvencesiz kalmaktır.",]#9
+                     "Boğa burcunun en nefret ettiği şeyler;Değişim,Risk almak,Acele Ettirilmek,Güvencesiz kalmaktır.",
+                     "Boğa burcu olumlu ve olumsuz özellikleri"]#9
 print("Seçmiş olduğunuz burç hakkında: \n yönetici gezegeni, \n sevdiği renkleri, \n olumlu yönlerini, \n olumsuz yönlerini, \n elementini, \n nitelikleri, \n uğurlu sayısı, \n uğurlu taşı, \n sevdiği şeyler, \n sevmediği şeyler,"
       "\nkonuları içeren sorular sorabilirsiniz.")
 c = input("Soru: ")
