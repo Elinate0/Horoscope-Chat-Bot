@@ -90,7 +90,6 @@ def loopHoroscope(smp):
             case "1":
                 time.sleep(0.80)
                 questions_sample.taurus()
-                time.sleep(3)
                 return loopHoroscope("taurus")
             case "2":
                 time.sleep(0.80)
@@ -103,16 +102,29 @@ def loopHoroscope(smp):
                 navigating()
     elif smp == "leo":
         match userInput:
-            case 1:
+            case "1":
                 questions_sample.leo()
-                time.sleep(1.5)
                 return loopHoroscope("leo")
-            case 2:
+            case "2":
                 print("2")
-            case 3:
+            case "3":
                 print("3")
-            case 4:
+            case "4":
                 navigating()
+    elif smp == "cancer":
+        match userInput:
+            case "1":
+                questions_sample.cancer()
+                return loopHoroscope("cancer")
+            case "2":
+                print("2")
+            case "3":
+                print("3")
+            case "4":
+                navigating()
+
+
+
 
 greetings(helloThereInputs, helloThereResponses)
 time.sleep(1)
