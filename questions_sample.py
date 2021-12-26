@@ -14,8 +14,7 @@ def taurus():
                "\n Nefret ettiği şeyler: Acele ettirilmek, parayı israf etmek, kirli şeyler, oteller, ani değişiklikler, engeller ve güvensizlik " \
                 "\n"
     print(bull_general)
-    print("{} Menüye dönmek ister misin?".format(prjName))
-    forLoop()
+    mainMenu()
 
 def leo():
     lion_general =  "Sembolü: Aslan \n Elementi: Ateş \n Niteliği: Sabit \n Yönetici Gezegeni: Güneş \n Renk: Altın Sarısı" \
@@ -25,7 +24,7 @@ def leo():
                     "\n En Sevdiği Şeyler: Eğlence, Enerjik Şeyler , Spor yapmak,Kameralar, şarkı söylemek, yakınlık kurmak, iltifat, güzel kıyafetler,"\
                     "\n Nefret Ettiği Şeyler:Görmezden gelinmek, yavan yemekler, yalnız kalmak, vedalar, kral-kraliçe muamelesi görmemek "
     print(lion_general)
-    forLoop()
+    mainMenu()
 
 def cancer():
     cancer_general = " Sembolü: Yengeç \n Elementi: Su \n Niteliği: Kardinal(öncü) \n Yönetici gezegeni: Ay (duyguları ve ruhsal durumları yöneten gök cismi) \n Renk: Beyaz" \
@@ -35,6 +34,7 @@ def cancer():
                 "\n En sevdiği şeyler: Gurme yemekler, salon sporları, ev partileri, çocuklar, müze ve sanat galeriler, evde yapılan hobiler, denize girmek, sevdiklerine yardım etmek" \
                 "\n Nefret ettiği şeyler: Pejmürde giysiler, uluorta konuşmak, acele ettirilmek, yabancı insanlar, özel hayatını anlatmak"
     print(cancer_general)
+    mainMenu()
 
 def gemini():
     gemini_general = " Sembolü: İkizler \n Elementi: Hava \n Niteliği: Değişken \n Yönetici gezegeni: Merkür (iletişim ve haberleşmenin gezegeni) \n Renk: Açık yeşil, sarı" \
@@ -44,6 +44,7 @@ def gemini():
                  "\n En sevdiği şeyler: Müzik, kitaplar, dergiler, sohbet etmek, kısa gezintiler" \
                  "\n Nefret ettiği şeyler: Yalnız olmak, sınırlandırılmak, tekrar ve rutin, dar görüşlü insanlar, geleneksel moda, otorite figürleri, sessizlik"
     print(gemini_general)
+    mainMenu()
 
 def forLoop():
     print("Menüye dönmek için kalan süre")
@@ -68,3 +69,15 @@ def horoscopeQuestion(bq,inp):
         print(bq[1])
     time.sleep(3)
     forLoop()
+
+def mainMenu():
+    print("{} Menüye dönmek istersen evet yaz".format(prjName))
+    userInput =input("Kullanıcı:")
+    if userInput == "evet":
+        pass
+    else:
+        print("{} Programı bitirmek istediğine emin misin ?".format(prjName))
+        userInput =input("Kullanıcı:")
+        if userInput == "evet":
+            print("{} Üzücü :'( görüşmek üzere...".format(prjName))
+            quit()
