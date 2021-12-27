@@ -5,8 +5,8 @@ import time
 
 import questions_sample
 
-questionUrls = {"taurus": "https://gist.githubusercontent.com/Elinate0/b92b7552f1a65bab57b1d70547a0d54a/raw/036bf39011788415da650aa6cd847ad70899948e/Questions.json", "lion": "https://gist.githubusercontent.com/Elinate0/b56313c1f0d9380ae94d4607c80ab061/raw/c37c5e148819be5643a500e5e0039b4da116bdcb/lionQuestions.json", "gemini": "https://gist.githubusercontent.com/Elinate0/04ff455fc78f1eb38dd303a2ca400759/raw/8171078d826350df49ae5e7863bbe0daa9e59729/cancerQuestions.json", "cancer": "https://gist.githubusercontent.com/Elinate0/a1a77e95d87087979d9945185a765f10/raw/27785bb4c3da807eb6c0508c87c2922c17eb72cf/geminiQuestions.json"}
-
+questionUrls = {"taurus": "https://gist.githubusercontent.com/Elinate0/b92b7552f1a65bab57b1d70547a0d54a/raw/4937889f7d53e7621b50de94709aae6c1fcb902a/Questions.json", "lion": "https://gist.githubusercontent.com/Elinate0/b56313c1f0d9380ae94d4607c80ab061/raw/c37c5e148819be5643a500e5e0039b4da116bdcb/lionQuestions.json", "gemini": "https://gist.githubusercontent.com/Elinate0/04ff455fc78f1eb38dd303a2ca400759/raw/8171078d826350df49ae5e7863bbe0daa9e59729/cancerQuestions.json", "cancer": "https://gist.githubusercontent.com/Elinate0/a1a77e95d87087979d9945185a765f10/raw/27785bb4c3da807eb6c0508c87c2922c17eb72cf/geminiQuestions.json"}
+prjName = 'Setenay:'
 
 def fetchData(horoscope, type):
     if type == "questions":
@@ -106,19 +106,19 @@ def run(answered, horoscope):
 
     if answered and answered != "first":
         time.sleep(0.80)
-        print(answered)
+        print("{} {} ".format(prjName,answered))
     elif answered != "first":
-        print("Anlayamadım")
+        print("{} Anlayamadım".format(prjName))
     time.sleep(0.80)
-    print("Seçmiş olduğunuz burç hakkında: \n yönetici gezegeni, \n sevdiği renkleri, \n olumlu yönlerini, \n olumsuz yönlerini, \n elementini, \n nitelikleri, \n uğurlu sayısı, \n uğurlu taşı, \n sevdiği şeyler, \n sevmediği şeyler,"
-      "\nkonuları içeren sorular sorabilirsiniz.")
+    print("{} Seçmiş olduğunuz burç hakkında: \n yönetici gezegeni, \n sevdiği renkleri, \n olumlu yönlerini, \n olumsuz yönlerini, \n elementini, \n nitelikleri, \n uğurlu sayısı, \n uğurlu taşı, \n sevdiği şeyler, \n sevmediği şeyler,"
+      "\nkonuları içeren sorular sorabilirsiniz.".format(prjName))
     time.sleep(0.80)
-    soru = input("Soru: ")
+    question = input("Kullanıcı: ")
 
     for i in range(len(questions)):
-        if fuzz.token_set_ratio(questions[i], soru.lower()) >= 91:
+        if fuzz.token_set_ratio(questions[i], question.lower()) >= 95:
             time.sleep(0.80)
-            print("İncelenen soru sayısı: "+str(i))
+            print("{} İncelenen soru sayısı: ".format(prjName)+str(i))
             if i > 454 and i <= 514:
                 run(answers[16], horoscope)
                 time.sleep(0.80)
