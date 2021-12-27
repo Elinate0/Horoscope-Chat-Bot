@@ -1,8 +1,9 @@
 import random
 import time
 import questions_sample
+import testing03
 
-prjName = 'Project X:'
+prjName = 'Setenay:'
 
 helloThereInputs = ("hello", "hi", "greetings", "hey", "hola", "merhaba", "bonjour", "sua s’dei", "hallo", "ciao", "selam")
 helloThereResponses = ["hi", "hey", "selam", "hi there", "hello", "Mutluyum! Benimle konuşuyorsun"]
@@ -93,22 +94,28 @@ def loopHoroscope(smp):
                 return loopHoroscope("taurus")
             case "2":
                 time.sleep(0.80)
-                questions_sample.baseQuestionsShow(questions_sample.baseQuestionsTaurus)
+                questions_sample.baseQuestionsShow(questions_sample.baseQuestionsTaurus,questions_sample.baseAnswersTaurus)
                 time.sleep(1)
                 return loopHoroscope("taurus")
             case "3":
-                print("3")
+                testing03.run("first","taurus")
+                return loopHoroscope("taurus")
             case "4":
                 navigating()
     elif smp == "leo":
         match userInput:
             case "1":
+                time.sleep(0.80)
                 questions_sample.leo()
                 return loopHoroscope("leo")
             case "2":
-                print("2")
+                time.sleep(0.80)
+                questions_sample.baseQuestionsShow(questions_sample.baseQuestionsLeo,questions_sample.baseAnswersLeo)
+                time.sleep(1)
+                return loopHoroscope("leo")
             case "3":
-                print("3")
+                testing03.run("first","lion")
+                return loopHoroscope("leo")
             case "4":
                 navigating()
     elif smp == "cancer":
@@ -117,12 +124,30 @@ def loopHoroscope(smp):
                 questions_sample.cancer()
                 return loopHoroscope("cancer")
             case "2":
-                print("2")
+                time.sleep(0.80)
+                questions_sample.baseQuestionsShow(questions_sample.baseQuestionsCancer,questions_sample.baseAnswersCancer)
+                time.sleep(1)
+                return loopHoroscope("cancer")
             case "3":
-                print("3")
+                testing03.run("first","cancer")
+                return loopHoroscope("cancer")
             case "4":
                 navigating()
-
+    elif smp == "gemini":
+        match userInput:
+            case "1":
+                questions_sample.gemini()
+                return loopHoroscope("gemini")
+            case "2":
+                time.sleep(0.80)
+                questions_sample.baseQuestionsShow(questions_sample.baseQuestionsGemini,questions_sample.baseAnswersGemini)
+                time.sleep(1)
+                return loopHoroscope("gemini")
+            case "3":
+                testing03.run("first","gemini")
+                return loopHoroscope("gemini")
+            case "4":
+                navigating()
 
 
 
