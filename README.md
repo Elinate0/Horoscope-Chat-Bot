@@ -6,14 +6,16 @@ Burçlar ile ilgili temel soruların ve cevaplarının bulunduğu alan "question
 "Fuzzywuzzy" ve "Similarity" fonksiyonları "testing03" içerisindedir. 
 ```
 
-##Gereksinimler
-> Proje sürümü: python 3.10
-> Gist dosyaları: https://gist.github.com/Elinate0
-> Gerekli modüller:
-> import random
-> import time
-> from fuzzywuzzy import fuzz
-> import requests
+## Gereksinimler
+```
+Proje sürümü: python 3.10
+Gist dosyaları: https://gist.github.com/Elinate0
+Gerekli modüller:
+import random
+import time
+from fuzzywuzzy import fuzz
+import requests
+```
 
 ```
 Gerekli dosya aktarımları:
