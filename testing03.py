@@ -3,12 +3,11 @@ import requests
 import json
 import time
 
-import questions_sample
-
 questionUrls = {"taurus": "https://gist.githubusercontent.com/Elinate0/b92b7552f1a65bab57b1d70547a0d54a/raw/4937889f7d53e7621b50de94709aae6c1fcb902a/Questions.json", "lion": "https://gist.githubusercontent.com/Elinate0/b56313c1f0d9380ae94d4607c80ab061/raw/c37c5e148819be5643a500e5e0039b4da116bdcb/lionQuestions.json", "gemini": "https://gist.githubusercontent.com/Elinate0/04ff455fc78f1eb38dd303a2ca400759/raw/8171078d826350df49ae5e7863bbe0daa9e59729/cancerQuestions.json", "cancer": "https://gist.githubusercontent.com/Elinate0/a1a77e95d87087979d9945185a765f10/raw/27785bb4c3da807eb6c0508c87c2922c17eb72cf/geminiQuestions.json"}
 prjName = 'Setenay:'
 
 def fetchData(horoscope, type):
+    """Burada gist üzerinden soruların kontrolü yapılmaktadır"""
     if type == "questions":
         if questionUrls[horoscope]:
             reqUrl = questionUrls[horoscope]
@@ -101,6 +100,7 @@ def fetchData(horoscope, type):
         return answers
 
 def run(answered, horoscope):
+    """Burada şablon soruların girilen soru ile benzerliğinin ölçülmesi işlemi yapılmaktadır"""
     answers = fetchData(horoscope, "answer")
     questions = fetchData(horoscope, "questions")
 
