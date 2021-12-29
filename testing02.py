@@ -27,17 +27,17 @@ def greetings(hti, htr):
 
 
 
-def loopGreetings():
-    """Bu fonksiyon çok güzel duran bir fonksiyon olmasına karşın henüz kullanmıyoruz"""
-    readyForTalk = False
-    while readyForTalk == False:
-        userInput = input("Kullanıcı: ")
-        for word in userInput.split():
-            if word in helloThereInputs:
-                print("{0} Tekrar {1}".format(prjName, random.choice(helloThereResponses)))
-                print("{} KOnuşmaya hazır mısın?".format(prjName, prjName))
-            else:
-                readyForTalk = True
+# def loopGreetings():
+#     """Bu fonksiyon çok güzel duran bir fonksiyon olmasına karşın henüz kullanmıyoruz"""
+#     readyForTalk = False
+#     while readyForTalk == False:
+#         userInput = input("Kullanıcı: ")
+#         for word in userInput.split():
+#             if word in helloThereInputs:
+#                 print("{0} Tekrar {1}".format(prjName, random.choice(helloThereResponses)))
+#                 print("{} KOnuşmaya hazır mısın?".format(prjName, prjName))
+#             else:
+#                 readyForTalk = True
 
 
 def trueHoroscopes(choosen):
