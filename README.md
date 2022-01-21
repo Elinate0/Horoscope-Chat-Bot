@@ -1,16 +1,16 @@
 ## Genel Bilgiler
 ```
-Şu anda temel kodların bulunduğu alan "testing.py"dir.
-Proje ile ilgili bir önceki sürümü "testing02.py" içerisinden görüntüleyebilirsiniz.
-Burçlar ile ilgili temel soruların ve cevaplarının bulunduğu alan "questions_sample.py"dir.
-"Fuzzywuzzy" ve "Similarity" fonksiyonları "testing03" içerisindedir. 
+Currently the base code area is "testing.py",
+You can view the previous version of the project in "testing02.py",
+The area where the basic questions and answers about horoscopes are located "questions_sample.py ",
+The functions "Fuzzywuzzy" and "Similarity" are in the "testing03".
 ```
 
 ## Gereksinimler
 ```
-Proje sürümü: python 3.10
+Project version: python 3.10
 Gist dosyaları: https://gist.github.com/Elinate0
-Gerekli modüller:
+Required modules:
 import random
 import time
 from fuzzywuzzy import fuzz
@@ -18,7 +18,7 @@ import requests
 ```
 
 ```
-Gerekli dosya aktarımları:
+Required file transfers:
 import questions_sample
 import testing03
 ```
