@@ -1,4 +1,4 @@
-## Genel Bilgiler
+## General Information
 ```
 Currently the base code area is "testing.py",
 You can view the previous version of the project in "testing02.py",
@@ -6,7 +6,7 @@ The area where the basic questions and answers about horoscopes are located "que
 The functions "Fuzzywuzzy" and "Similarity" are in the "testing03".
 ```
 
-## Gereksinimler
+## Requirements
 ```
 Project version: python 3.10
 Gist dosyaları: https://gist.github.com/Elinate0
